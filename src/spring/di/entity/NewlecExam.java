@@ -1,10 +1,27 @@
 package spring.di.entity;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class NewlecExam implements Exam {
+	@Value("20")
 	private int kor;
+	@Value("20")
 	private int eng;
+	@Value("20")
 	private int math;
+	@Value("20")
 	private int com;
+	
+	public NewlecExam() {
+		
+	}
+	public NewlecExam(int kor, int eng, int math, int com) {
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		this.com = com;
+	}
+
 	
 	@Override
 	public int total() {
@@ -47,5 +64,10 @@ public class NewlecExam implements Exam {
 	public void setCom(int com) {
 		this.com = com;
 	}
-
+	@Override
+	public String toString() {
+		return "NewlecExam [kor=" + kor + ", eng=" + eng + ", math=" + math + ", com=" + com + "]";
+	}
+	
+	
 }
